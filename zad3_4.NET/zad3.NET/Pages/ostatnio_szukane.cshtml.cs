@@ -20,7 +20,6 @@ namespace zad3.NET.Pages
 
             if (ostatnio_szukane != null)
                 FizzBuzz = JsonConvert.DeserializeObject<FizzBuzz>(ostatnio_szukane);
-
         }
     }
 }

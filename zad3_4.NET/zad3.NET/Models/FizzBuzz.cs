@@ -8,6 +8,7 @@ namespace zad3.NET.Models
 {
     public class FizzBuzz
     {
+        public int Id { get; set; }
 
         [Display(Name = "liczbe")]
         //[Required(ErrorMessage ="Polejest obowiązkowe")] nie działa na intach
@@ -15,6 +16,8 @@ namespace zad3.NET.Models
 
 
         public int liczba { get; set; }
+       // [Required]
+       // [MaxLength(200)]     // limit znaków
         public string wynik { get; set; }
 
         public string data { get; set; }

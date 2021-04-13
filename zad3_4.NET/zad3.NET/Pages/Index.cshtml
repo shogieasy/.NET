@@ -16,6 +16,19 @@
         <button type="submit" class="btn btn-primary">Zatwierdź</button><br />
     </form>
 
+  
+  
+    @*
+        @foreach (var item in Model.FizzBuzzList)
+        {
+            <p>
+                @Html.DisplayFor(modelItem => item.wynik)
+                @Html.DisplayFor(modelItem => item.liczba)
+                @Html.DisplayFor(modelItem => item.data)
+            </p>
+        }
+    *@
+
 
     @if (Model.FizzBuzz != null && ModelState.IsValid)
     {
@@ -23,7 +36,7 @@
     }
 
 
-    
+    @*
         @if (Model.FizzBuzz != null && ModelState.IsValid)
         {
 
@@ -41,5 +54,9 @@
 
 
         }
-    
+    *@
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
 </div>
