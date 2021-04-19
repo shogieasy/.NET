@@ -16,8 +16,8 @@
         <button type="submit" class="btn btn-primary">Zatwierdź</button><br />
     </form>
 
-  
-  
+
+
     @*
         @foreach (var item in Model.FizzBuzzList)
         {
@@ -30,11 +30,11 @@
     *@
 
 
-    @if (Model.FizzBuzz != null && ModelState.IsValid)
-    {
-        @Model.FizzBuzz.wynik
-    }
-
+      @if (Model.FizzBuzz != null && ModelState.IsValid)
+        {
+            @Model.FizzBuzz.wynik
+        }
+    
 
     @*
         @if (Model.FizzBuzz != null && ModelState.IsValid)

@@ -23,12 +23,13 @@ namespace zad3.NET.Pages.razor_CRUD
 
         public async Task OnGetAsync()
         {
-            FizzBuzzList = await _context.FizzBuzz.ToListAsync();
-            FizzBuzzList = Ostatnie10.Sortowanie(FizzBuzzList);
-            FizzBuzz = FizzBuzzList;
-           // FizzBuzz = await _context.FizzBuzz.ToListAsync();
+            FizzBuzz = await _context.FizzBuzz.ToListAsync();
+            FizzBuzz = _context.FizzBuzz.Take(10).OrderByDescending(s => s.data).ToList();
+            //  FizzBuzzList = Ostatnie10.Sortowanie(FizzBuzzList);
+            // FizzBuzz = FizzBuzzList;
+            // FizzBuzz = await _context.FizzBuzz.ToListAsync();
 
-            
+
         }
 
     }
