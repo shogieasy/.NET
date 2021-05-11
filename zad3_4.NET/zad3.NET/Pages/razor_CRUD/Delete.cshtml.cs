@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DocumentFormat.OpenXml.Spreadsheet;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +12,10 @@ using zad3.NET.Models;
 
 namespace zad3.NET.Pages.razor_CRUD
 {
+    //[Authorize(Policy = "user")]
+    
+
+
     public class DeleteModel : PageModel
     {
         private readonly zad3.NET.Data.List _context;

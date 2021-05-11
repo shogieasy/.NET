@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using zad3.NET.Data;
 using zad3.NET.Models;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace zad3.NET.Pages.razor_CRUD
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly zad3.NET.Data.List _context;
@@ -23,8 +26,10 @@ namespace zad3.NET.Pages.razor_CRUD
 
         public async Task OnGetAsync()
         {
+            
             FizzBuzz = await _context.FizzBuzz.ToListAsync();
-            FizzBuzz = _context.FizzBuzz.Take(10).OrderByDescending(s => s.data).ToList();
+            FizzBuzz = _context.FizzBuzz.OrderByDescending(s => s.data).Take(20).ToList();
+            await _context.SaveChangesAsync();
             //  FizzBuzzList = Ostatnie10.Sortowanie(FizzBuzzList);
             // FizzBuzz = FizzBuzzList;
             // FizzBuzz = await _context.FizzBuzz.ToListAsync();

@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.Extensions.DependencyInjection;
+using System.Security.Claims;
+using zad3.NET.Migrations.zad3NET;
 
 namespace zad3.NET.Models
 {
+
     public class FizzBuzz
     {
         public int Id { get; set; }
@@ -22,10 +26,20 @@ namespace zad3.NET.Models
 
         public string data { get; set; }
 
+        public static string login { get; set; }
 
+        /*
+        public static void Logins()
+        {
+            login = ClaimTypes.Name;
+        }
+        */
 
         public void oblicz()
         {
+
+            login = ClaimTypes.Name;
+
             data = DateTime.Now.ToString();
 
             wynik = "";
@@ -44,7 +58,7 @@ namespace zad3.NET.Models
             
             if (wynik != "") //do 2
             {
-                wynik = "Otrzymano: " + wynik;
+                wynik = "Otrzymano: " + wynik + login; 
             }
             else
             {
@@ -52,6 +66,8 @@ namespace zad3.NET.Models
             }
 
         }
+
+
 
     }
 }

@@ -1,15 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace zad3.NET.Models
 {
     public class Ostatnie10
     {
+        public static string login { get; set; }
+        public static void Logins()
+        {
+            login = ClaimTypes.Name;
+        }
 
         public static List<FizzBuzz> Sortowanie(List<FizzBuzz> lista)
         {
+            
             var retList = new List<FizzBuzz>();
 
             int wielkoscListy = lista.Count;
